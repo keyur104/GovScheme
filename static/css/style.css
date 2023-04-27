@@ -1,0 +1,30 @@
+label{
+	 display: block;
+  color: black;
+  margin: 0 0 4px;
+  font-size: 30px;
+}
+.form-group1
+{
+	margin-top: 300px;
+}
+
+.form-control{
+	 border:  3px solid black;
+  padding: 10px;
+  font-size: 1.2em;
+  width: 50%;
+}
+body{
+	background-color:white;
+}
+.btn.btn-dark
+{
+	padding: 15px;
+}
+.card
+{
+  display: inline-flex;
+  position:relative;
+	
+}

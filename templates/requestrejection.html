@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="img/fav.png">
+  <!-- Author Meta -->
+  <meta name="author" content="colorlib">
+  <!-- Meta Description -->
+  <meta name="description" content="">
+  <!-- Meta Keyword -->
+  <meta name="keywords" content="">
+  <!-- meta character set -->
+  <meta charset="UTF-8">
+  <!-- Site Title -->
+  <title>GovScheme</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'css/linearicons.css'%}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'css/nice-selec t.css'%}">							
+    <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css'%}">			
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css'%}">			
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    
+    textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+    }
+    
+    
+    .banner {
+    position: relative;
+    height: 100%;
+    background-image: url("banner-bg.jpg");  
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+    .banner::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2); 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+    input, select, textarea {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    }
+    input {
+    width: calc(100% - 10px);
+    padding: 5px;
+    }
+    input[type="date"] {
+    padding: 4px 5px;
+    }
+    textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+    }
+    .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+    color:  #669999;
+    }
+    .item input:hover, .item select:hover, .item textarea:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 3px 0  #669999;
+   
+    }
+    .item {
+    position: relative;
+    margin: 10px 0;
+    }
+    .item span {
+    color: red;
+    }
+   
+    .colums {
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+    flex-wrap:wrap;
+    }
+    .colums div {
+    width:48%;
+    }
+    input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    }
+    .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    font-size: 20px;
+    color:  #a3c2c2;
+    }
+    .item i {
+    right: 1%;
+    top: 30px;
+    z-index: 1;
+    }
+    input[type=radio], input[type=checkbox]  {
+    display: none;
+    }
+    label.radio {
+    position: relative;
+    display: inline-block;
+    margin: 5px 20px 15px 0;
+    cursor: pointer;
+    }
+    .question span {
+    margin-left: 30px;
+    }
+    .question-answer label {
+    display: block;
+    }
+    label.radio:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    }
+    input[type=radio]:checked + label:before, label.radio:hover:before {
+    border: 2px solid  #669999;
+    }
+    label.radio:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 8px;
+    height: 4px;
+    border: 3px solid  #669999;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    opacity: 0;
+    }
+    input[type=radio]:checked + label:after {
+    opacity: 1;
+    }
+    
+    .btn-block {
+    margin-top: 10px;
+    text-align: center;
+    }
+    
+    }
+    
+    }
+    @media (min-width: 568px) {
+    .name-item, .city-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    .name-item input, .name-item div {
+    width: calc(50% - 20px);
+    }
+    .name-item div input {
+    width:97%;}
+    .name-item div label {
+    display:block;
+    padding-bottom:5px;
+    }
+    }
+  </style> 
+</head>
+<body>
+  <header id="header" id="home">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          
+          
+        </div>			  					
+      </div>
+  </div>
+  {% if message%}
+  <script>alert("{{ message }}")</script> 
+  {% endif %}
+
+    <div class="container main-menu" style="background-color: black;">
+      <div class="row align-items-center justify-content-between d-flex">
+      <!-- <input type="checkbox" id='check'>
+      <label for='check'>
+      <i class="fas fa-bars" id="bars"></i>
+      <i class="fas fa-times" id="cancel"></i>
+      </label> -->
+      
+      
+        <div id="logo">
+         
+        </div>
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li><a href='afterlogin' style="font-size: 3rem;"><i class="fa fa-home "></i>Home</a></li>
+							<li><a href='requestScheme'><i class="fa fa-plus-circle "></i>Create Scheme</a></li>
+							<li><a href='modifyscheme'><i class="fa fa-edit"></i>Modify Scheme</a></li>
+							<li><a href='requested'><i class="fa fa-edit"></i>Scheme request from state</a></li>
+							
+							<li><a href='providefund'><i class="fa fa-plus-circle "></i>Provide Funds</a></li>
+              <li><a href='viewrequest'><i class="fa fa-plus-circle "></i>Modification request</a></li>
+              <li><a href='rejectedschemescentral'><i class="fa fa-plus-circle "></i>Rejected Schemes</a></li>
+        <li><a href="logout" ><i class="fa fa-arrow-circle-right" aria-hidden="true" style="padding-right: 3px;"></i>log out</a></li>
+          </ul>
+        </nav><!-- #nav-menu-container -->		    		
+      </div>
+    </div>
+  </header><!-- #header -->
+
+  <!-- start banner Area -->
+  <!-- <section class="banner-area relative" id="home"> -->
+            
+    <!-- <div class="overlay overlay-bg">
+      <div class='sidebar'>
+        <header>Navigate</header>
+        <ul>
+							
+          <li><a href='afterlogin'><i class="fa fa-home "></i>Home</a></li>
+          <li><a href='requestScheme'><i class="fa fa-plus-circle "></i>Request Scheme</a></li>
+          <li><a href='requestmodifyscheme'><i class="fa fa-edit"></i>Modification Request</a></li>
+          
+          <li><a href='receivedfunds'><i class="fa fa-plus-circle "></i>received funds</a></li>
+          <li><a href='newSchemeFromCentral'><i class="fa fa-plus-circle "></i>new Scheme from Central</a></li>
+          <li><a href='modificationreqfromcentral'><i class="fa fa-plus-circle "></i>Modification from central</a></li>
+          <li><a href='rejectedschemesstate'><i class="fa fa-edit"></i>Rejected Scheme</a></li>
+        </ul>
+
+
+      </div> -->
+    </div>	
+  <!-- <div class="form-group1">
+    <label for="formGroupExampleInput">Budget</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter revised budget">
+  </div> -->
+  <!--  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">With textarea</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div> -->
+
+  <!-- <div class="form-group">
+    <label for="formGroupExampleInput2">Provision</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="enter the updated provisions">
+  </div> -->
+  <!--  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">With textarea</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div> -->
+
+
+<div class="container" style="padding-top:100px;padding-bottom: 50px;">
+  <div class="row">
+      <div class="card" style="width: 70rem;height:60rem">
+        <div class="card-body">
+          <div overlay-bg>
+            <form action="afterreqreject" method="POST">
+              {% csrf_token %}
+          
+         
+         
+          <div  class="item">
+            <label for="additionalInfo"> Reason for Rejection <span></span></label>
+            <textarea id="additionalInfo" class="form-textarea" name="reason" required cols="70" rows="18" data-component="textarea" aria-labelledby="label_24"></textarea>
+          </div>
+
+
+       
+  
+  <input type="submit" class="primary-btn text-uppercase" value="Submit" style="width: fit-content;margin-left:20%">
+  
+</form>
+  
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+	<!-- start footer Area -->		
+  <footer class="footer-area section-gap" >
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-2 col-md-6 col-sm-6" >
+          <div class="single-footer-widget" >
+            <h4 >Top Products</h4>
+            <ul>
+              <li><a href="#">Managed Website</a></li>
+              <li><a href="#">Manage Reputation</a></li>
+              <li><a href="#">Power Tools</a></li>
+              <li><a href="#">Marketing Service</a></li>
+            </ul>								
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>								
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>								
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Experts</a></li>
+              <li><a href="#">Agencies</a></li>
+            </ul>								
+          </div>
+        </div>																		
+        <div class="col-lg-4  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>Stay update with our latest</p>
+            <div class="" id="mc_embed_signup">
+               <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+                <div class="input-group">
+                     
+                  </div>
+                    <div class="info"></div>  
+                </div>
+              </form> 
+            </div>
+          </div>
+        </div>											
+      </div>
+      <div class="footer-bottom row align-items-center justify-content-between">
+        <p class="footer-text m-0 col-lg-6 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        <div class="col-lg-6 col-sm-12 footer-social">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-behance"></i></a>
+        </div>
+      </div>						
+    </div>
+  </footer>	
+  <!-- End footer Area -->	
+
+
+  <script src="{% static 'js/vendor/jquery-2.2.4.min.js'%}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="{% static 'js/vendor/bootstrap.min.js'%}"></script>			
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="{% static 'js/easing.min.js'%}"></script>			
+  <script src="{% static 'js/hoverIntent.js'%}"></script>
+  <script src="{% static 'js/superfish.min.js'%}"></script>	
+  <script src="{% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>	
+    <script src="{% static 'js/jquery.tabs.min.js'%}"></script>						
+  <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>	
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>									
+  <script src="{% static 'js/mail-script.js'%}"></script>	
+  <script src="{% static 'js/main.js'%}"></script>	
+  
+
+</body>
+</html>

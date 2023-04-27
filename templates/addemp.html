@@ -1,0 +1,310 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="img/fav.png">
+  <!-- Author Meta -->
+  <meta name="author" content="colorlib">
+  <!-- Meta Description -->
+  <meta name="description" content="">
+  <!-- Meta Keyword -->
+  <meta name="keywords" content="">
+  <!-- meta character set -->
+  <meta charset="UTF-8">
+  <!-- Site Title -->
+  <title>GovScheme</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'css/linearicons.css'%}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'css/nice-selec t.css'%}">							
+    <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css'%}">			
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css'%}">			
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <header id="header" id="home">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          
+          
+        </div>			  					
+      </div>
+  </div>
+  {% if message%}
+  <script>alert("{{ message }}")</script> 
+  {% endif %}
+
+    <div class="container main-menu">
+      <div class="row align-items-center justify-content-between d-flex">
+      <!-- <input type="checkbox" id='check'>
+      <label for='check'>
+      <i class="fas fa-bars" id="bars"></i>
+      <i class="fas fa-times" id="cancel"></i>
+      </label> -->
+      
+      
+        <div id="logo">
+         
+        </div>
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li style="padding-left: 750px;"><a href="{% static 'about.html'%}" style="color: black;">About</a></li>
+      
+                                                                  
+        <li><a href="{% static 'contact.html'%}" style="color: black;">Contact</a></li>
+        <li><a href="logout" style="color: black;"><i class="fa fa-arrow-circle-right" aria-hidden="true" style="padding-right: 3px;"></i>log out</a></li>
+          </ul>
+        </nav><!-- #nav-menu-container -->		    		
+      </div>
+    </div>
+  </header><!-- #header -->
+
+  <!-- start banner Area -->
+  <!-- <section class="banner-area relative" id="home"> -->
+            
+   
+  <!-- <div class="form-group1">
+    <label for="formGroupExampleInput">Budget</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter revised budget">
+  </div> -->
+  <!--  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">With textarea</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div> -->
+
+  <!-- <div class="form-group">
+    <label for="formGroupExampleInput2">Provision</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="enter the updated provisions">
+  </div> -->
+  <!--  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">With textarea</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div> -->
+
+<img src="{% static 'img/login-bg.jpg'%}" >
+                
+				<div class="overlay overlay-bg" style="background-color: rgba(0,0,0,0.8);">
+					<form method="POST" action="proceedemp">
+						{% csrf_token %}
+					<div class="box" style="height: 100rem;width:50rem;margin-top:-150px">
+						<h1 style="text-align: center;margin-top:-25px">Add New Employee</h1>
+						<p>First Name :</p>
+						<input type="text" class="form-control" name="fname" placeholder="Enter First Name "><br><br>
+						<p>Last Name:</p>
+            <input type="text" class="form-control" name="lname" placeholder="Enter Last Name"><br><br>
+            <p>email:</p>{{invalidEmail}}
+            <input type="email" class="form-control" name="email" placeholder="Enter Email"><br><br>
+            <p>Goverment:</p>
+            <input type="text" class="form-control" list="datal" name="gov" ><br><br>
+            <p>Domain:</p>
+            <input type="text" class="form-control" list="data" name="domain" ><br><br>
+            <p>Ministry:</p>
+            <input type="text" class="form-control" list="datalist" name="ministry" ><br><br>
+            <p>Adhaar no:</p>
+            <input type="number" class="form-control" name="adhaar" placeholder="Enter UIDI No"><br><br>
+            <p>Password:</p>
+						<input type="password" class="form-control" name="password" placeholder="Enter your password"><br><br>
+        
+            <p>Confirm Password:</p>
+						<input type="password" class="form-control" name="cnfpassword" placeholder="Enter your password"><br><br>
+            <input type="submit" class="primary-btn text-uppercase" value="create User"><br>
+            
+            <datalist id=datalist>
+              {% for i in dept%}
+              <option value="{{i}}"></option>
+              {% endfor %}
+
+            </datalist>
+
+            <datalist id=datal>
+              
+              <option value="Central"></option>
+              <option value="State"></option>
+              
+
+            </datalist>
+            <datalist id=data>
+              
+              <option value="Authority"></option>
+              <option value="Ministry"></option>
+              
+
+            </datalist>
+					</form>
+
+						
+					</div>	
+				</div>	
+
+
+          <!-- <div overlay-bg>
+            <form action="#" method="POST">
+              {% csrf_token %}
+          
+         
+          <div class="item">
+            <label for="address2">First Name <span></span></label>
+            <input id="address2" type="text"   name="scheme"  required />
+          </div>
+
+          <div class="item">
+            <label for="address2">Last Name <span></span></label>
+            <input id="address2" type="text"   name="scheme"  required />
+          </div>
+
+          <div class="item">
+            <label for="address2"> emailid <span></span></label>
+            <input id="address2" type="email"   name="ministry"  required />
+          </div>
+
+          <div class="item">
+            <label for="address2"> Ministry<span></span></label>
+            <input id="address2" type="email"   name="ministry" value="{{ministry}}" readonly required />
+          </div>
+
+
+          <div class="item">
+            <label for="address2"> Adhaar No <span></span></label>
+            <input id="address2" type="number"   name="sector"  required/>
+          </div>
+
+          <div class="item">
+            <label for="address2"> Password <span></span></label>
+            <input id="address2" type="password"   name="funds" required />
+          </div>
+
+          <div class="item">
+            <label for="address2">confirm Password <span></span></label>
+            <input id="address2" type="password"   name="funds" required />
+          </div>
+
+          
+
+
+
+        </form>
+</div> -->
+
+
+	<!-- start footer Area -->		
+  <!-- <footer class="footer-area section-gap" style="padding-left:350px;">
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-2 col-md-6 col-sm-6" >
+          <div class="single-footer-widget" >
+            <h4 >Top Products</h4>
+            <ul>
+              <li><a href="#">Managed Website</a></li>
+              <li><a href="#">Manage Reputation</a></li>
+              <li><a href="#">Power Tools</a></li>
+              <li><a href="#">Marketing Service</a></li>
+            </ul>								
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>								
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>								
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Experts</a></li>
+              <li><a href="#">Agencies</a></li>
+            </ul>								
+          </div>
+        </div>																		
+        <div class="col-lg-4  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>Stay update with our latest</p>
+            <div class="" id="mc_embed_signup">
+               <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+                <div class="input-group">
+                     
+                  </div>
+                    <div class="info"></div>  
+                </div>
+              </form> 
+            </div>
+          </div>
+        </div>											
+      </div> -->
+      <div class="footer-bottom row align-items-center justify-content-between">
+        <p class="footer-text m-0 col-lg-6 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        <div class="col-lg-6 col-sm-12 footer-social">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-behance"></i></a>
+        </div>
+      </div>						
+    </div>
+  </footer>	
+  <!-- End footer Area -->	
+
+
+  <script src="{% static 'js/vendor/jquery-2.2.4.min.js'%}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="{% static 'js/vendor/bootstrap.min.js'%}"></script>			
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="{% static 'js/easing.min.js'%}"></script>			
+  <script src="{% static 'js/hoverIntent.js'%}"></script>
+  <script src="{% static 'js/superfish.min.js'%}"></script>	
+  <script src="{% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>	
+    <script src="{% static 'js/jquery.tabs.min.js'%}"></script>						
+  <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>	
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>									
+  <script src="{% static 'js/mail-script.js'%}"></script>	
+  <script src="{% static 'js/main.js'%}"></script>	
+  
+
+</body>
+</html>
